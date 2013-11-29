@@ -1,0 +1,200 @@
+body{
+	width:800px;
+	background:#fffde4 url(../images/bodyBg.jpg) repeat-x;
+	margin:0px auto;
+	padding:0;
+}
+
+#Top{
+	margin:0px;
+	padding:0;
+	width:800px;
+	height:400px;
+	background:url(../images/headBg.jpg) no-repeat;
+}
+#TopMenu{
+	margin-top:10px;
+	height: 20px;
+	width: 800px;
+	float: right;
+	display: block;
+
+}
+#TopMenu ul{
+	width:300px;
+	margin: 0px;
+	padding: 0px;
+	float: right;
+	display: block;
+}
+#TopMenu ul li{
+	list-style-type:none;	
+	width: auto;
+	float: left;
+	display:block
+	
+}
+#TopMenu .blank{
+	width: 1px;
+	height: 18px;
+	margin: 0px;
+	padding: 0 5px 0 5px;
+	float: left;
+	background:url(../images/mBlank.jpg) no-repeat center top;
+}
+
+#TopMenu a{
+	text-decoration: none;
+}
+
+#TopMenu a span{
+	padding:0 5px;
+}
+
+#Logo{
+	width:100%;
+	float:right;
+	margin:20px 0;
+}
+	
+
+#Logo .title{
+	width:300px;
+	float:right;
+}
+
+#Login{
+	width: 100%;
+	float: left;
+}
+
+#Login .title{
+	width:100%;
+	float:left;
+}
+
+#Login h2{
+	float: right;
+	width: 300px;
+}
+
+#Login .loginForm{
+	width:300px;
+	float:right;
+}
+
+#Login .fillIn{
+	width:100px;
+}
+
+#Register{
+	width:100%;
+	float: left;
+	margin-top:5px;
+	padding-top: 5px;
+}
+
+#Register span{
+	width:300px;
+	float:right;
+}
+
+#Search{
+	margin:40px 0;
+	padding:40px 0;
+	width:100%;
+	float:left;
+}
+
+#Search form{
+	margin:auto;
+	padding-left: 25%;
+}
+
+#Search .searchContent{
+	width:400px;
+	height:30px;
+	float:left;
+}
+
+#SignUp{
+	width:100%;
+	float:right;
+}
+
+#SignUp .SignUpForm{
+	margin-left: 60%;
+}
+
+#MainContent{
+	width:100%;
+	float:left;
+}
+
+#MainContent .LeftMenu{
+	width:25%;
+	float: left;
+	border-radius: 10px;
+	border:solid #f9f6dd 7px;
+}
+
+#MainContent .LeftMenu .content{
+	margin:7%;
+}
+
+
+#MainContent .Description{
+	margin-left:10px;
+	width:65%;
+	float:left;
+	border:solid #f9f6dd 7px;
+	border-radius: 10px
+}
+
+#MainContent .Description .content{
+		margin:7%;
+}
+#MainContent ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#MainContent h3{
+	margin: 0px;
+	padding: 0px;
+	font-family: Georgia;
+	font-size: 30px;
+	color: #0b636b;
+	line-height: 34px;
+	font-weight: normal;
+}
+
+#Recommand{
+	width:100%;
+	float: left;
+	margin:7% 0;
+	border:solid #f9f6dd 7px;
+	border-radius: 10px
+}
+
+#Recommand h3{
+	margin: 0px;
+	padding: 0px;
+	font-family: Georgia;
+	font-size: 24px;
+	color: #0b636b;
+	line-height: 34px;
+	font-weight: normal;
+
+}
+
+#Recommand .content{
+
+}
+#Footer{
+	width:100%;
+	float :left;
+	margin-bottom: 10px;
+	text-align: right;
+}
