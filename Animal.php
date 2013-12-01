@@ -82,32 +82,7 @@
     
         <div class="Description">
             <div class="content">
-                <img  src="<?php echo $picture?>">
-                <h3> Details</h3>
-                <label><strong>Head-Body Length:</strong></label>
-                <span><?php echo $height?></span>
-                <br>
-                <label><strong>Weight:</strong></label>
-                <span><?php echo $weight?></span>
-                <br>
-                <label><strong>Identification:</strong></label>
-                <span><?php echo $identification?></span>
-                <br>
-                <label><strong>Habitat:</strong></label>
-                <span><?php echo $habitat?></span>
-                <br>
-                <label><strong>Diet:</strong></label>
-                <span><?php echo $diet?></span>
-                <br>
-                <label><strong>Reproduction:</strong></label>
-                <span><?php echo $reproduction?></span>
-                <br>
-                <label><strong>Status:</strong></label>
-                <span><?php echo $status?></span>
-                <br>
-                <label><strong>Interesting Facts:</strong></label>
-                <span><?php echo $interestingFacts?></span>
-                <br>
+                <?php echo $descriptionStr?>
             </div>
         </div>
     </div>
