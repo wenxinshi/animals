@@ -1,5 +1,5 @@
 body{
-	width:800px;
+	width:1000px;
 	background:#fffde4 url(../images/bodyBg.jpg) repeat-x;
 	margin:0px auto;
 	padding:0;
@@ -8,14 +8,14 @@ body{
 #Top{
 	margin:0px;
 	padding:0;
-	width:800px;
+	width:1000px;
 	height:400px;
 	background:url(../images/headBg.jpg) no-repeat;
 }
 #TopMenu{
 	margin-top:10px;
 	height: 20px;
-	width: 800px;
+	width: 1000px;
 	float: right;
 	display: block;
 
@@ -132,7 +132,7 @@ body{
 }
 
 #MainContent .LeftMenu{
-	width:25%;
+	width:15%;
 	float: left;
 	border-radius: 10px;
 	border:solid #f9f6dd 7px;
@@ -145,14 +145,14 @@ body{
 
 #MainContent .Description{
 	margin-left:10px;
-	width:65%;
+	width:75%;
 	float:left;
 	border:solid #f9f6dd 7px;
 	border-radius: 10px
 }
 
 #MainContent .Description .content{
-		margin:7%;
+		margin:3%;
 }
 #MainContent ul{
 	margin: 0;
@@ -171,8 +171,14 @@ body{
 }
 
 #MainContent .content img{
+	display:inline-block;
     float: right;
-    margin: 12px;
+    margin: 5px;
+}
+
+#MainContent .content td:nth-child(1){
+    width:20%;
+    vertical-align: top;
 }
 
 #Recommand{
