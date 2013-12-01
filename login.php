@@ -99,20 +99,10 @@ echo "Welcome back, ".$username." please enjoy!";
 
 mysqli_close($con);
 
-
-<<<<<<< HEAD
-case "login";
-login();
-break;
-
-}
 ?> 
 
-<!-- saaas dda -->
-=======
-?> 
     </div>
      
 </body>
 </html>
->>>>>>> wenxinshi
+
