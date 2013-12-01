@@ -92,8 +92,8 @@ die("Your password is wrong!");
 
 //Now if everything is correct let's finish his/her/its login
 
-// session_register("username", $username);
-// session_register("password", $password);
+ session_register("user_id", $id);
+//session_register("password", $password);
 
 echo "Welcome back, ".$username." please enjoy!";
 
