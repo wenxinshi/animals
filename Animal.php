@@ -48,56 +48,32 @@
         </div>
     </div>
 
-    <?php 
-     include 'Config.php';
-     $Id=$_GET['Id'];
-     $sql="select * from species where ID='$Id'";
-     $result=mysqli_query($con,$sql);
-     $row=mysqli_fetch_array($result);
-
-     $commandName=$row['commonName'];
-     $scientificName=$row['scientificName'];
-     $HBLength=$row['HBLength'];
-     $weight=$row['weight'];
-     $height=$row['height'];
-     $identification=$row['identification'];
-     $habitat=$row['habitat'];
-     $diet=$row['diet'];
-     $reproduction=$row['reproduction'];
-     $socialStructure=$row['socialStructure'];
-     $behavior=$row['behavior'];
-     $status=$row['status'];
-     $interestingFacts=$row['interestingFacts'];
-     $geographics=$row['geographics'];
-     $picture=$row['picture'];
-    ?>
+    <?php include_once 'Animal_Sql.php';?>
     <div id="MainContent">
         <div class="LeftMenu">
                 <div class="content">
                 <h3>Animal</h3>
                 <ul>
                     <li id="Phylum">
-                        <b>Phylum:</b>
-                        <span id="PhylumContent">Chordata</span>
-                    </li>
+                        <strong>Phylum:</strong></li>
                     <li id="Order">
-                        <b>Class:</b>
-                        <span id="OrderContent">Order</span>
+                        <strong>Class:</strong>
+                        <span id="OrderContent"></span>
                     </li>
                     <li id="Artiodactyla">
-                        <b>Order:</b>
+                        <strong>Order:</strong>
                         <span id="ArtiodactylaContent">Artiodactyla</span>
                     </li>
                     <li id="Family">
-                        <b>Family:</b>
+                        <strong>Family:</strong>
                         <span id="FamilyContent">Suidae</span>
                     </li>
                     <li id="Genus">
-                        <b>Genus:</b>
+                        <strong>Genus:</strong>
                         <span id="GenusContent">Sus</span>
                     </li>
                     <li id="Species">
-                       <b> Species :</b>
+                       <strong> Species :</strong>
                         <span id="SpeciesContent">Sus scrofa</span>
                     </li>
                 </ul>
@@ -106,31 +82,31 @@
     
         <div class="Description">
             <div class="content">
-                <img  src="<?php echo $picture?>" align="right" hspace="10" vspace="10">
+                <img  src="<?php echo $picture?>">
                 <h3> Details</h3>
-                <label>Head-Body Length:</label>
-                <span class="Length"><?php echo $height?></span>
+                <label><strong>Head-Body Length:</strong></label>
+                <span><?php echo $height?></span>
                 <br>
-                <label>Weight:</label>
-                <span class="Weight"><?php echo $weight?></span>
+                <label><strong>Weight:</strong></label>
+                <span><?php echo $weight?></span>
                 <br>
-                <label>Identification:</label>
-                <span class="Identification"><?php echo $identification?></span>
+                <label><strong>Identification:</strong></label>
+                <span><?php echo $identification?></span>
                 <br>
-                <label>Habitat:</label>
-                <span class="Habitat"><?php echo $habitat?></span>
+                <label><strong>Habitat:</strong></label>
+                <span><?php echo $habitat?></span>
                 <br>
-                <label>Diet:</label>
-                <span class="Diet"><?php echo $diet?></span>
+                <label><strong>Diet:</strong></label>
+                <span><?php echo $diet?></span>
                 <br>
-                <label>Reproduction:</label>
-                <span class="Reproduction"><?php echo $reproduction?></span>
+                <label><strong>Reproduction:</strong></label>
+                <span><?php echo $reproduction?></span>
                 <br>
-                <label>Status:</label>
-                <span class="Status"><?php echo $status?></span>
+                <label><strong>Status:</strong></label>
+                <span><?php echo $status?></span>
                 <br>
-                <label>Interesting Facts:</label>
-                <span class="Facts"><?php echo $interestingFacts?></span>
+                <label><strong>Interesting Facts:</strong></label>
+                <span><?php echo $interestingFacts?></span>
                 <br>
             </div>
         </div>

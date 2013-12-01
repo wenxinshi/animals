@@ -170,6 +170,11 @@ body{
 	font-weight: normal;
 }
 
+#MainContent .content img{
+    float: right;
+    margin: 12px;
+}
+
 #Recommand{
 	width:100%;
 	float: left;
