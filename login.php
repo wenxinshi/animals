@@ -34,7 +34,7 @@
 
     <div id="Directory">
         <ul>
-          <a href="./Home.html" >Home</a>
+          <a href="index.php" >Home</a>
           <b>|</b>
           <a href="about.html" >About</a>
         </ul>
@@ -92,6 +92,7 @@ die("Your password is wrong!");
 
 //echo "Welcome back, ".$username." please enjoy!";
 $_SESSION['userID']=$id;
+$_SESSION['username']=$username ;
 
 echo "Welcome back, ".$username.", please enjoy!";
 
