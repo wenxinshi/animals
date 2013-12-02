@@ -54,8 +54,15 @@ include 'Config.php';
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
+if(empty($username)){
+        die("Please enter your username!<br>");
+        }
 
-echo "Welcome back, $username, please enjoy!";
+if(empty($password)){
+        die("Please enter your password!<br>");
+        }
+
+//echo "Welcome back, $username, please enjoy!";
 
 
 //Find if entered data is correct
@@ -85,7 +92,7 @@ die("Your password is wrong!");
 }
 
 
-echo "Welcome back, ".$username." please enjoy!";
+//echo "Welcome back, ".$username." please enjoy!";
 $_SESSION['userID']=$id;
 
 echo "Welcome back, ".$username.", please enjoy!";
