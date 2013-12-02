@@ -7,8 +7,7 @@
 </head>
 
 <body>
-
-   <div id="Top">
+        <div id="Top">
         <div id="TopMenu">
              <ul class="list">
              <li><a href="index.html"><span>Home</span></a></li>
@@ -29,14 +28,15 @@
             <div class="title">
                 <h2>User Login</h2>
             </div>
-            <form class="loginForm" action="LogIn.html" method="post">
-                <input class="fillIn" name="name" type="text" value="User name" onfocus="if(this.value=='User name') this.value=''" onBlur="if(this.value=='') this.value='User name'" >
-                <input class="fillIn" name="name" type="text" value="Password" onfocus="if(this.value=='Password') this.value=''" onBlur="if(this.value=='') this.value='Password'" >
+
+            <form class="loginForm" action="login.php" method="post">
+                <input class="fillIn" name="username" type="text" value="User name" onfocus="if(this.value=='User name') this.value=''" onBlur="if(this.value=='') this.value='User name'" >
+                <input class="fillIn" name="password" type="text" value="Password" onfocus="if(this.value=='Password') this.value=''" onBlur="if(this.value=='') this.value='Password'" >
                 <input type="submit" value="Sign In">               
             </form>
               
             <div id="Register">
-                <span>Not yet a Member? <a onClick="SignUp()" href="#">Register Now</a></a></span>
+                <span>Not yet a Member? <a href=SignUp.html>Register Now</a></a></span>
             </div>
         </div>
 
@@ -47,6 +47,7 @@
             </form>
         </div>
     </div>
+
 
     <?php include_once 'Animal_Sql.php';?>
     <div id="MainContent">

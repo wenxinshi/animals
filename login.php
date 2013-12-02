@@ -88,13 +88,6 @@ if($password != $real_password){
 die("Your password is wrong!");
 }
 
-
-
-//Now if everything is correct let's finish his/her/its login
-
- session_register("user_id", $id);
-//session_register("password", $password);
-
 echo "Welcome back, ".$username." please enjoy!";
 
 mysqli_close($con);
