@@ -45,13 +45,13 @@
 
 
 //echo "Welcome back, ".$username." please enjoy!";
-// session_start();
+session_start();
 
 
 //This function will find and checks if your data is correct
-// if (!sset($_REQUEST['submit'])) {
-// 	exit('not allow to access!');
-// }
+ if (!sset($_REQUEST['submit'])) {
+ 	exit('not allow to access!');
+ }
 
 include 'Config.php';
 //Collect your info from login form
@@ -91,9 +91,9 @@ die("Your password is wrong!");
 
 
 //Now if everything is correct let's finish his/her/its login
+//Create a session for the user! 
 
- session_register("user_id", $id);
-//session_register("password", $password);
+$_SESSION['userID']=$id;
 
 echo "Welcome back, ".$username." please enjoy!";
 
