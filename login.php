@@ -59,7 +59,7 @@ $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
 
-echo "Welcome back, $username please enjoy!";
+echo "Welcome back, $username, please enjoy!";
 
 
 //Find if entered data is correct
@@ -95,7 +95,7 @@ die("Your password is wrong!");
 
 $_SESSION['userID']=$id;
 
-echo "Welcome back, ".$username." please enjoy!";
+echo "Welcome back, ".$username.", please enjoy!";
 
 mysqli_close($con);
 
