@@ -45,13 +45,13 @@
 
 
 //echo "Welcome back, ".$username." please enjoy!";
-// session_start();
+session_start();
 
 
 //This function will find and checks if your data is correct
-// if (!sset($_REQUEST['submit'])) {
-// 	exit('not allow to access!');
-// }
+ if (!sset($_REQUEST['submit'])) {
+ 	exit('not allow to access!');
+ }
 
 include 'Config.php';
 //Collect your info from login form
@@ -59,7 +59,7 @@ $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
 
-echo "Welcome back, $username please enjoy!";
+echo "Welcome back, $username, please enjoy!";
 
 
 //Find if entered data is correct
@@ -88,7 +88,18 @@ if($password != $real_password){
 die("Your password is wrong!");
 }
 
+<<<<<<< HEAD
 echo "Welcome back, ".$username." please enjoy!";
+=======
+
+
+//Now if everything is correct let's finish his/her/its login
+//Create a session for the user! 
+
+$_SESSION['userID']=$id;
+
+echo "Welcome back, ".$username.", please enjoy!";
+>>>>>>> 67900635a31b857f1aea793c6191f1a138418a81
 
 mysqli_close($con);
 
