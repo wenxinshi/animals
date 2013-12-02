@@ -131,6 +131,26 @@
      $orderName=getName($orderID,"orders");
      $className=getName($classID,"class");
      $phylumName=getName($phylumID,"phylum");
-     
 
+     $leftStr.="<tr>
+                    <td><strong>Phylum</strong>:</td>
+                    <td>".$phylumName."</td>
+                </tr>";
+     $leftStr.="<tr>
+                    <td><strong>Class</strong>:</td>
+                    <td>".$className."</td>
+                </tr>";     
+     $leftStr.="<tr>
+                    <td><strong>Order</strong>:</td>
+                    <td>".$orderName."</td>
+                </tr>";
+     $leftStr.="<tr>
+                    <td><strong>Family</strong>:</td>
+                    <td>".$familyName."</td>
+                </tr>";
+     $leftStr.="<tr>
+                    <td><strong>Genus</strong>:</td>
+                    <td>".$genusName."</td>
+                </tr>";
+      $leftStr.="</table>";
 ?>

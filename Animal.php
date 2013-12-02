@@ -53,30 +53,7 @@
         <div class="LeftMenu">
                 <div class="content">
                 <h3>Animal</h3>
-                <ul>
-                    <li id="Phylum">
-                        <strong>Phylum:</strong></li>
-                    <li id="Order">
-                        <strong>Class:</strong>
-                        <span id="OrderContent"></span>
-                    </li>
-                    <li id="Artiodactyla">
-                        <strong>Order:</strong>
-                        <span id="ArtiodactylaContent">Artiodactyla</span>
-                    </li>
-                    <li id="Family">
-                        <strong>Family:</strong>
-                        <span id="FamilyContent">Suidae</span>
-                    </li>
-                    <li id="Genus">
-                        <strong>Genus:</strong>
-                        <span id="GenusContent">Sus</span>
-                    </li>
-                    <li id="Species">
-                       <strong> Species :</strong>
-                        <span id="SpeciesContent">Sus scrofa</span>
-                    </li>
-                </ul>
+                <?php echo $leftStr?>
             </div>
         </div>
     
