@@ -47,6 +47,27 @@
             </form>
         </div>
     </div>
+    <div id="userlogin">
+        <?php
+
+        //This will start a session
+        session_start();
+
+        $username = $_SESSION['username'];
+
+
+        //Check do we have username and password
+        if(!$username ){
+        echo "Welcome Guest! <br> <a href=login.php>Login</a> | <a href=register.php>Register</a>";}
+        else{
+        echo "Welcome ".$username." (<a href=logout.php>Logout</a>)";
+        }
+
+
+        ?> 
+    </div>
 
 </body>
+
 </html>
+
