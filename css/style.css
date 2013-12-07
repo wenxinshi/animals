@@ -142,6 +142,17 @@ body{
 	margin:7%;
 }
 
+#Tag{
+	width: 100%;
+}
+
+#TextArea{
+	width:90%;
+	height: 150px;
+	border-style: solid;
+	border-radius: 10px;
+	overflow: hidden;
+}
 
 #MainContent .Description{
 	margin-left:10px;
@@ -199,6 +210,8 @@ body{
 	font-weight: normal;
 
 }
+
+
 
 #Footer{
 	width:100%;
