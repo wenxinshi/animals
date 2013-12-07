@@ -34,28 +34,6 @@
             </form>
         </div>
     </div>
-<<<<<<< HEAD
-    <div id="userlogin">
-        <?php
-
-        //This will start a session
-        session_start();
-
-        $username = $_SESSION['username'];
-
-        echo"$uername";
-        //Check do we have username and password
-        if(!$username ){
-        echo "Welcome Guest! <br> <a href=login.php>Login</a> | <a href=register.php>Register</a>";}
-        else{
-        echo "Welcome ".$username." (<a href=logout.php>Logout</a>)";
-        }
-
-
-        ?> 
-    </div>
-=======
->>>>>>> fe1d5eea245abb112afeb10385a9b7fb5a5ec169
 
 </body>
 
