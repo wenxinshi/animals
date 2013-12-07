@@ -13,27 +13,24 @@
         		$speciesID=$_GET['Id'];
         		//get the animal species ID;
         		
-        		$nowfamilyID= mysqli_query($con,"SELECT familyID FROM family2genus, genus2species WHERE
-       				family2genus.genusID=genus2species.genusID AND genus2species.speciesID=$speciesID");
-       			// $nowsuggestspeiesID = mysqli_query($con, "SELECT speciesID FROM family2genus, genus2species WHERE
-       			// 	family2genus.genusID=genus2species.genusID AND family2genus.familyID=$nowfamilyID ");
-
-       		echo"$nowfamilyID";
-	       		// while($row=mysqli_fetch_array($nowsuggestspeiesID)){
-	       		// 	$ImageLink=$row['picture'];
-		   	    // 	$commonName=$row['commonName'];
-		   	    // 	$Id=$row['ID'];
-		   		  	// echo "<a href='Animal.php?Id=$Id'><img src='$ImageLink'></a>";
-	         //  		echo "<p>$commonName</p>";	
+        		$result= mysqli_query($con,"SELECT familyID FROM family2genus, genus2species WHERE family2genus.genusID=genus2species.genusID AND genus2species.speciesID=$speciesID");
+            $row=mysqli_fetch_array($result);
+            $nowfamilyID=$row['familyID'];
+       			$nowsuggestspeiesID = mysqli_query($con, "SELECT * FROM family2genus, genus2species,species WHERE family2genus.genusID=genus2species.genusID AND family2genus.familyID=$nowfamilyID limit 5");
+            
+           //  $row=mysqli_fetch_array($nowfamilyID);
+           //  $content=$row['familyID'];
+       		  // echo $content;
+	       		while($row=mysqli_fetch_array($nowsuggestspeiesID)){
+	       			$ImageLink=$row['picture'];
+		   	    	$commonName=$row['commonName'];
+		   	    	$Id=$row['ID'];
+              echo '<div class="float">';
+              echo '<a href="Animal.php?Id='.$Id.'"><img src="'.$ImageLink.'"></a>';
+	          	echo "<span>$commonName</span>";
+              echo '</div>';	
+              }
         	} 
         	?>
-        	
-       
-
-        
-       <img class="float" src="images/Pig.jpg">
-       <img class="float" src="images/Pig.jpg">
-       <img class="float" src="images/Pig.jpg"> 
-       <img class="float" src="images/Pig.jpg">
     </div>
 </div>

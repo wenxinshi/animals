@@ -199,6 +199,9 @@ body{
 	font-weight: normal;
 
 }
+#Recommand .float{
+	display: inline;
+}
 
 #Footer{
 	width:100%;
