@@ -4,6 +4,7 @@
             <h3>Animal</h3>
             <?php echo $leftStr?>
         </div>
+        <?php include 'Tag.php'?>
     </div>
 
     <div class="Description">
