@@ -1,6 +1,5 @@
 <div id="Login">
 <?php
-session_start();
 if(isset($_SESSION['username'])){
     $username=$_SESSION['username'];
     echo '<div class="title"><h2>Welcome '.$username.'(<a href=logout.php>Logout</a>)</h2></div> ';
