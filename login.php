@@ -1,59 +1,10 @@
-<?php session_start();?>
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Animal Kingdom</title>
-    <script type="text/javascript" src="Js.js"></script>
-</head>
 
-<body>
-    <div id="Header">
-        <div class="Title">
-            <h1>
-                <span class="BlueText">Animal Kingdom</span>
-            </h1>
-
-            <div id="Search">
-                <input type="text" name="search">
-                <input type="submit" value="Search">
-            </div>
-        </div>
-        
-        <div id="LoginBlock">
-
-
-            <form id="LoginForm" action="login.php" method ="post">
-
-          	    <label for="userName">Username:</label>
-                <input type="text" name="username">
-                <label for="password">Password:</label>
-                <input type="text" name="password">
-                <input type="submit" value="Log In" >
-                <input type="button" value="Sign Up" formaction="SignUp.html">  
-            </form>     
-        </div>
-
-    </div>
-
-    <div id="Directory">
-        <ul>
-          <a href="index.php" >Home</a>
-          <b>|</b>
-          <a href="about.html" >About</a>
-        </ul>
-      
-    </div>
-    <div id="LoginFeedBack">
 <?php
-
 
 //echo "Welcome back, ".$username." please enjoy!";
 session_start();
 
-
-
-include 'Config.php';
+include 'query/Config.php';
 //Collect your info from login form
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
@@ -104,8 +55,4 @@ mysqli_close($con);
 
 ?> 
 
-    </div>
-     
-</body>
-</html>
 
