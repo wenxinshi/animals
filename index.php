@@ -23,22 +23,9 @@
                 <h1>Animal Kindom</h1>
             </div>
         </div>
+       
 
-        <div id="Login">
-            <div class="title">
-            	<h2>User Login</h2>
-            </div>
-
-            <form class="loginForm" action="login.php" method="post">
-                <input class="fillIn" name="username" type="text" value="User name" onfocus="if(this.value=='User name') this.value=''" onBlur="if(this.value=='') this.value='User name'" >
-                <input class="fillIn" name="password" type="text" value="Password" onfocus="if(this.value=='Password') this.value=''" onBlur="if(this.value=='') this.value='Password'" >
-                <input type="submit" value="Sign In">               
-            </form>
-              
-            <div id="Register">
-                <span>Not yet a Member? <a href=SignUp.html>Register Now</a></a></span>
-            </div>
-        </div>
+        <?php include 'LoginCheck.php';?>
 
         <div id="Search">
             <form action="Search.php" method="get">
@@ -47,6 +34,7 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
     <div id="userlogin">
         <?php
 
@@ -66,6 +54,8 @@
 
         ?> 
     </div>
+=======
+>>>>>>> fe1d5eea245abb112afeb10385a9b7fb5a5ec169
 
 </body>
 

@@ -20,7 +20,10 @@
         </div>
         
         <div id="LoginBlock">
+
+
             <form id="LoginForm" action="login.php" method ="post">
+
           	    <label for="userName">Username:</label>
                 <input type="text" name="username">
                 <label for="password">Password:</label>
