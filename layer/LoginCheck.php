@@ -21,6 +21,6 @@ else{
     </form>
          
     <div id="Register">
-       <span>Not yet a Member? <a href=SignUp.html>Register Now</a></a></span>
+       <span>Not yet a Member? <a href=SignUp.php>Register Now</a></a></span>
    </div>
 </div>  

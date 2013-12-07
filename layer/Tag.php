@@ -1,6 +1,8 @@
 <?php 
   if(!isset($_SESSION['username']))
-  	return
+  	return;
+  // $sql="select "
+  // $TagContent=mysqli_query($con,$sql);  
 ?>
 
 <div>
