@@ -55,7 +55,7 @@
 
         $username = $_SESSION['username'];
 
-
+        echo"$uername";
         //Check do we have username and password
         if(!$username ){
         echo "Welcome Guest! <br> <a href=login.php>Login</a> | <a href=register.php>Register</a>";}
