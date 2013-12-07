@@ -3,18 +3,19 @@ window.open("SignUp.html");
 }
 
 
-function TagEdit(){
-    document.getElementById("TextArea").disabled=false;
+function TagEdit(Id){
+    document.getElementById("TextArea").readOnly=false;
     document.getElementById("TagEditButton").style.display='none';
-    document.getElementById("TagEditingButton").innerHTML='<button id="TagCancelButton" type="button">Cancel</button><button id="TagSaveButton" type="button">Save</button>';
+    document.getElementById("TagEditingButton").innerHTML='<button id="TagCancelButton" type="button" onclick="TagCancel('+Id+')">Cancel</button><button id="TagSaveButton" type="button" onclick="TagSave('+Id+')">Save</button>';
 }
 
-function showHint(str)
+function TagSave(Id)
 {
 var xmlhttp;
+var str=document.getElementById("TextArea").innerHTML;
 if (str.length==0)
   { 
-  document.getElementById("txtHint").innerHTML="";
+  document.getElementById("TextArea").innerHTML="";
   return;
   }
 if (window.XMLHttpRequest)
@@ -29,10 +30,36 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    document.getElementById("TextArea").innerHTML=xmlhttp.responseText;
+    document.getElementById("TagCancelButton").style.display='none';
+    document.getElementById("TagSaveButton").style.display='none';
+    document.getElementById("TextArea").readOnly=true;
+    document.getElementById("TagEditButton").style.display='inLine';
     }
   }
-xmlhttp.open("GET","gethint.asp?q="+str,true);
+xmlhttp.open("GET","query/TagSave.php?Id="+Id+"&&tag="+str,true);
 xmlhttp.send();
+}
+
+function TagCancel(Id)
+{
+var xmlhttp=new XMLHttpRequest();
+  
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("TextArea").innerHTML=xmlhttp.responseText;
+    // document.getElementById("TextArea").innerHTML=xmlhttp.responseText;
+    // document.getElementById("TagCancelButton").style.display='none';
+    // document.getElementById("TagSaveButton").style.display='none';
+    // document.getElementById("TextArea").readOnly=true;
+    // document.getElementById("TagEditButton").style.display='inLine';
+    }
+    
+  }
+xmlhttp.open("GET","query/TagCancel.php?Id="+Id,true);
+xmlhttp.send();
+
 }
 
