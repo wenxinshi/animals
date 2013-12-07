@@ -1,5 +1,4 @@
 <?php 
-     include 'Config.php';
      $Id=$_GET['Id'];
      $sql="select * from species where ID='$Id'";
      $result=mysqli_query($con,$sql);

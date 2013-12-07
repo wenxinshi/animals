@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+session_start();
+include 'query/Config.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,3 +11,4 @@
 </head>
 
 <body>
+     
