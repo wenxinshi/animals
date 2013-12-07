@@ -8,10 +8,10 @@
 
     $userID=$_SESSION['userID'];
     $username=$_SESSION['username'];
-    $speicesID=$_GET['Id'];
+    $speciesID=$_GET['Id'];
     
     $sql="INSERT INTO visited (userID,speciesID) VALUES
-    ('$userID','$speicesID')";
+    ('$userID','$speciesID')";
     $insert=mysqli_query($con,$sql) or die (mysqli_error());};
 
   
