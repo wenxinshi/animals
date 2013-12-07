@@ -1,10 +1,7 @@
-
+<?php include 'layer/Header.php'?>
 <?php
 
 //echo "Welcome back, ".$username." please enjoy!";
-session_start();
-
-include 'query/Config.php';
 //Collect your info from login form
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
@@ -51,8 +48,5 @@ $_SESSION['username']=$username ;
 
 echo "Welcome back, ".$username.", please enjoy!";
 
-mysqli_close($con);
-
 ?> 
-
-
+<?php include 'layer/Footer.php'?>

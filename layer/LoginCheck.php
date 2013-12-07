@@ -7,7 +7,6 @@ if(isset($_SESSION['username'])){
     return;
 }
 else{
-
        echo '<div class="title"><h2>Welcome Guest!</h2></div>';
     }
 ?>
