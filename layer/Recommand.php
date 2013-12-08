@@ -19,6 +19,7 @@
         		$speciesID=$_GET['Id'];
         		//get the animal species ID;
         		
+
         		$result= mysqli_query($con,"SELECT familyID FROM family2genus, genus2species WHERE
        				family2genus.genusID=genus2species.genusID AND genus2species.speciesID=$speciesID");
         		 $row=mysqli_fetch_array($result);
@@ -55,5 +56,6 @@
        <img class="float" src="images/Pig.jpg">
        <img class="float" src="images/Pig.jpg"> 
        <img class="float" src="images/Pig.jpg"> -->
+
     </div>
 </div>
