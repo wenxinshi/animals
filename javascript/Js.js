@@ -50,3 +50,39 @@ xmlhttp.send();
 
 }
 
+
+function Login(){
+
+var xmlhttp=new XMLHttpRequest();
+var username=document.getElementById("SignInForm").username.value;
+var password=document.getElementById("SignInForm").password.value;
+
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("Login").innerHTML=xmlhttp.responseText;
+    }
+    
+  }
+xmlhttp.open("GET","query/Login.php?username="+username+"&password="+password,true);
+xmlhttp.send();
+
+}
+
+
+function Logout(){
+var xmlhttp=new XMLHttpRequest();
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("Login").innerHTML=xmlhttp.responseText;
+    }
+    
+  }
+xmlhttp.open("GET","query/Logout.php",true);
+xmlhttp.send();
+
+}
+

@@ -1,8 +1,9 @@
-<?php include 'layer/Header.php'?>
 <?php
 
 //echo "Welcome back, ".$username." please enjoy!";
 //Collect your info from login form
+session_start();
+include 'Config.php';
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 
@@ -46,7 +47,6 @@ die("Your password is wrong!");
 $_SESSION['userID']=$id;
 $_SESSION['username']=$username ;
 
-echo "Welcome back, ".$username.", please enjoy!";
+include '../layer/LoginCheck.php';
 
 ?> 
-<?php include 'layer/Footer.php'?>
