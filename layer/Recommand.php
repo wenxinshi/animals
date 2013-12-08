@@ -11,7 +11,9 @@
         			(SELECT f.familyID, COUNT(f.familyID) as c from visited, genus2species AS g, family2genus AS f 
         				where visited.userID = $userID and visited.speciesID = g.speciesID and f.genusID = g.genusID GROUP BY f.familyID ORDER BY c DESC) AS j 
         				WHERE f0.familyID = j.familyID and f0.genusID = g0.genusID and g0.speciesID=Species.ID and g0.speciesID NOT IN (SELECT speciesID FROM visited where userID = 2) ORDER BY j.c DESC LIMIT 6");
-        		
+        		if($result === FALSE) {
+    			die(mysqli_error($con)); 
+				}
         		while($row=mysqli_fetch_array($result)){
 	       		$suggestID=$row['ID'];
 	       		$ImageLink=$row['picture'];
@@ -41,7 +43,9 @@
        			 $nowsuggestspeiesID = mysqli_query($con, "SELECT Species.ID,Species.picture, Species.scientificName, Species.commonName FROM family2genus, genus2species, species WHERE
        			 	family2genus.genusID=genus2species.genusID AND Species.ID=genus2species.speciesID AND family2genus.familyID=$nowfamilyID LIMIT 6" );
        			 
-
+        		if($result === FALSE) {
+    			die(mysqli_error($con)); 
+				}
 	       		while($row=mysqli_fetch_array($nowsuggestspeiesID)){
 	       			$suggestID=$row['ID'];
 	       			$ImageLink=$row['picture'];
