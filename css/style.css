@@ -210,9 +210,6 @@ body{
 	font-weight: normal;
 
 }
-#Recommand .float{
-	display: inline;
-}
 
 
 
@@ -232,23 +229,54 @@ body{
   text-align:center;
 }
 
-div.recommandlist img
-  {
-  display:inline;
-  margin:3px;
-  border:1px solid #bebebe;
-  }
-div.img a:hover img
-  {
-  border:1px solid #333333;
-  }
 
 
-.animalname{ 
+.oneresult{
+	 margin:3px;
+  	border:1px solid #bebebe;
+	float: left;
+	width: 154px;
+	margin-right: 4px;
+}
+
+.oneresult.inner{ 
+float: left;
+
+display: block;
+height: 154px;
+position: relative;
+
+}
+.title{
+	float:left;
+	width: 150px;
+	
+	clear: left;
 	text-align:center;
-  font-weight:normal;
-  width:150px;
-  font-size:12px;
-  margin:10px 5px 10px 5px;
+	overflow: hidden;
+}
 
+.mainresult{
+	 margin:2px;
+  	border:1px solid #bebebe;
+	float: left;
+	width: 298px;
+	margin-right: 10px;
+}
+
+.mainresult.inner{ 
+float: left;
+
+display: block;
+height: 254px;
+position: relative;
+
+}
+.maintitle{
+	float:left;
+	width: 300px;
+	
+	clear: left;
+	text-align:center;
+	overflow: hidden;
 }

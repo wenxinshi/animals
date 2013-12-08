@@ -1,20 +1,34 @@
 <div id="Recommand">
 
     <div class="content">
+
         
         	<?php 
         	if(isset($_SESSION['username'])) {
         		echo" <h3> Hello, $username, Maybe you are interested in the following animals: </h3>";
         		$speciesID=$_GET['Id'];
-        		$result= mysqli_query($con,"SELECT g.genusID, COUNT(g.genusID) as c from visited, genus2species AS g 
-        		where visited.userID = $userID and visited.speciesID = g.speciesID GROUP BY g.genusID ORDER BY c DESC");
-        		 $row=mysqli_fetch_array($result);
-        		 //echo $row['genusID'] ;     		
-        		 echo $row['c'];
+        		$result= mysqli_query($con,"SELECT Species.ID,Species.picture, Species.scientificName, Species.commonName FROM Species,family2genus AS f0, genus2species AS g0, 
+        			(SELECT f.familyID, COUNT(f.familyID) as c from visited, genus2species AS g, family2genus AS f 
+        				where visited.userID = $userID and visited.speciesID = g.speciesID and f.genusID = g.genusID GROUP BY f.familyID ORDER BY c DESC) AS j 
+        				WHERE f0.familyID = j.familyID and f0.genusID = g0.genusID and g0.speciesID=Species.ID and g0.speciesID NOT IN (SELECT speciesID FROM visited where userID = 2) ORDER BY j.c DESC LIMIT 6");
+        		
+        		while($row=mysqli_fetch_array($result)){
+	       		$suggestID=$row['ID'];
+	       		$ImageLink=$row['picture'];
+		   	   	$commonName=$row['commonName'];
+		   	    	//$Id=$result['ID'];
+		   		  	echo " <div class='oneresult'>
+						<span class='inner'><a href='Animal.php?Id=$suggestID'><img class='float' src='$ImageLink' width=150 height=150></a>
+						</span>
+ 						<span class='title'><a href='Animal.php?Id=$suggestID'><span>$commonName</span></a></span>
+ 					</div>
+ 					";
+	          	}  		
+        		 
         		
         	}
         	else{
-        		echo "<h3> Hello, Guest, We suggest the realtaed animals for you! If you want us recommand more
+        		echo "<h3> Hello, Guest, We suggest the realtaed animals for you! If you want us remember your search and recommand more
         		precisely, <a href=query/SignUp.php>Register</a> Soon! </h3>" ;
         		$speciesID=$_GET['Id'];
         		//get the animal species ID;
@@ -29,33 +43,23 @@
        			 
 
 	       		while($row=mysqli_fetch_array($nowsuggestspeiesID)){
-	       			
+	       			$suggestID=$row['ID'];
 	       			$ImageLink=$row['picture'];
 		   	    	$commonName=$row['commonName'];
 		   	    	//$Id=$result['ID'];
-		   		  	echo "<a href='Animal.php?Id=$Id'><img class='float' src='$ImageLink' width=150 height=150></a> ";
-	          		//echo "<p>$commonName</p>";
+		   		  	echo " <div class='oneresult'>
+						<span class='inner'><a href='Animal.php?Id=$suggestID'><img class='float' src='$ImageLink' width=150 height=150></a>
+						</span>
+ 						<span class='title'><a href='Animal.php?Id=$suggestID'><span>$commonName</span></a></span>
+ 					</div>
+ 					";
 	          		}
-	          	?>
-	          	<?php	
-	          	while($row1=mysqli_fetch_array($nowsuggestspeiesID)){
-	       			
-	       			$ImageLink=$row1['picture'];
-		   	    	$commonName=$row1['commonName'];
-		   	    	//$Id=$result['ID'];
-		   		  	//echo "<a href='Animal.php?Id=$Id'><img class='float' src='$ImageLink' width=150 height=150></a> ";
-	          		echo "<p>$commonName</p>";
-	          		}
-        	} 
+	          	}
+
         	?>
         	
        
-
         
-<!--        <img class="float" src="images/Pig.jpg">
-       <img class="float" src="images/Pig.jpg">
-       <img class="float" src="images/Pig.jpg"> 
-       <img class="float" src="images/Pig.jpg"> -->
 
     </div>
 </div>

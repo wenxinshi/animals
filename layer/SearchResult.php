@@ -14,8 +14,12 @@
 	   		  $ImageLink=$row['picture'];
 	   	    $commonName=$row['commonName'];
           $Id=$row['ID'];
-	   		  echo "<a href='Animal.php?Id=$Id'><img src='$ImageLink'></a>";
-          echo "<p>$commonName</p>";	
+              echo " <div class='mainresult'>
+            <span class='inner'><a href='Animal.php?Id=$Id'><img class='float' src='$ImageLink' width=294 height=294></a>
+            </span>
+            <span class='maintitle'><a href='Animal.php?Id=$Id'><span><h3>$commonName</h3></span></a></span>
+          </div>
+          ";	
 	   	  }
       ?>
     </div>
