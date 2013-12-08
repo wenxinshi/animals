@@ -4,7 +4,7 @@
   $userID=$_SESSION['userID'];
   $speciesID=$_GET['Id'];
 
-  $sql="select tag from tags where VID in (select VID from visited where userID = ".$userID." and speciesID = ". $speciesID.")";
+  $sql="select tag from tags,visited where tags.vid = visited.vid AND visited.userID ='$userID'AND visited.speciesID ='$speciesID'";
 
   $result=mysqli_query($con,$sql);
  
