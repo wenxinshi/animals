@@ -47,6 +47,4 @@ die("Your password is wrong!");
 $_SESSION['userID']=$id;
 $_SESSION['username']=$username ;
 
-include '../layer/LoginCheck.php';
-
 ?> 
