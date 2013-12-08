@@ -143,7 +143,11 @@ body{
 }
 
 #Tag{
-	width: 100%;
+	width: 90%;
+	height: 200px;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #00ffff;
 }
 
 #TextArea{
@@ -231,6 +235,7 @@ body{
 
 
 
+<<<<<<< HEAD
 .oneresult{
 	 margin:3px;
   	border:1px solid #bebebe;
@@ -250,8 +255,14 @@ position: relative;
 .title{
 	float:left;
 	width: 150px;
-	
 	clear: left;
+}
+#DefaultTag label{
+    border-radius: 5px;
+}
+
+.animalname{ 
+
 	text-align:center;
 	overflow: hidden;
 }
