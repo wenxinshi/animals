@@ -10,11 +10,11 @@
   $result=mysqli_query($con,$sql);
   $resultCount=mysqli_query($con,$sqlCount);
 
-  $Color[]="#f0000f";
-  $Color[]="#ff00ff";
-  $Color[]="#00ff00";
-  $Color[]="#0000ff";
-  $Color[]="#0f6000";     
+  $Color[]="#00bfff";
+  $Color[]="#adff2f";
+  $Color[]="#f5deb3";
+  $Color[]="#ff69b4";
+  $Color[]="#bebebe";     
 ?>
 
 <div id="Tag">
@@ -22,7 +22,7 @@
     <?php
 
     if(mysqli_num_rows($resultCount)<3){
-    echo  '<label  draggable="true" ondragstart="Drag(event)" style="background:#0300f0">Learned</label>';
+    echo  '<label  draggable="true" ondragstart="Drag(event)" style="background:#00bfff">Learned</label>';
     echo '<label  draggable="true" ondragstart="Drag(event)" style="background:#01f000">Favorate</label>';      
     echo  '<label  draggable="true" ondragstart="Drag(event)" style="background:#f00400">Like</label>';    
     }
