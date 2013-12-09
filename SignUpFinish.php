@@ -1,10 +1,9 @@
-<?php include 'layer/Hearder.php';?>
+<?php include 'layer/Header.php';?>
 <?php include 'layer/Top.php';?>
     <?php
-    
-	   include 'Config.php';
-
-		$Email=$_REQUEST['Email'];
+        if(isset($_SESSION['username']))
+            return;
+    	$Email=$_REQUEST['Email'];
 		$Username=$_REQUEST['UserName'];
 		$Password=$_REQUEST['Password'];
         $Password_conf=$_REQUEST['Password_conf'];
@@ -52,7 +51,7 @@
 		else{
             $sql="INSERT INTO users (username,password,email) VALUES 
             ('$Username','$Password','$Email')";
-            $insert=mysqli_query($con,$sql) or die(mysqli_error());
+            $insert=mysqli_query($con,$sql) or die(mysql_error());
             if(!$insert){ 
 			    echo "<h1>Failed to sign up</h1>";
             }
@@ -60,7 +59,6 @@
                 echo "<h1> $Username, Congradulations! Sucessful Sign Up! Please log in</h1>";
             }	
 		}
-		mysqli_close($con);
     ?>
      
 <?php include 'layer/Footer.php';?>
