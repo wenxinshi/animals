@@ -43,7 +43,7 @@
        			 $nowsuggestspeiesID = mysqli_query($con, "SELECT Species.ID,Species.picture, Species.scientificName, Species.commonName FROM family2genus, genus2species, species WHERE
        			 	family2genus.genusID=genus2species.genusID AND Species.ID=genus2species.speciesID AND family2genus.familyID=$nowfamilyID LIMIT 6" );
        			 
-        		if($result === FALSE) {
+        		if($nowsuggestspeiesID === FALSE) {
     			die(mysqli_error($con)); 
 				}
 	       		while($row=mysqli_fetch_array($nowsuggestspeiesID)){
