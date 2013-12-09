@@ -50,7 +50,7 @@
 
 
         if($option=='name'){
-            echo"<h3>Thank you for using our Name search!</h3>";
+            echo"<h3>You are searching for the animal named <h1>$KeyWord<h1></h3>";
             $sql="SELECT picture, scientificName, ID,commonName FROM species WHERE commonName LIKE '%".$KeyWord."%'";
     	    	$result = mysqli_query($con,$sql);
           
@@ -58,7 +58,7 @@
 
         }
         if ($option=='tag') {
-            echo"<h3>Thank you for using our TAG search!</h3>";
+            echo"<h3>You are searching for the tag named <h1>$KeyWord<h1></h3>";
             $sql="SELECT s.picture, s.scientificName, s.ID, s.commonName from tags, visited, species as s 
             where tags.vid = visited.vid and tags.tag LIKE '%".$KeyWord."%' and visited.speciesID = s.ID";
             $result = mysqli_query($con,$sql);

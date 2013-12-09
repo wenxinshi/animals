@@ -10,7 +10,7 @@
         		$result= mysqli_query($con,"SELECT species.ID,species.picture, species.scientificName, species.commonName FROM species,family2genus AS f0, genus2species AS g0, 
         			(SELECT f.familyID, COUNT(f.familyID) as c from visited, genus2species AS g, family2genus AS f 
         				where visited.userID = $userID and visited.speciesID = g.speciesID and f.genusID = g.genusID GROUP BY f.familyID ORDER BY c DESC) AS j 
-        				WHERE f0.familyID = j.familyID and f0.genusID = g0.genusID and g0.speciesID=species.ID and g0.speciesID NOT IN (SELECT speciesID FROM visited where userID = 2) ORDER BY j.c DESC LIMIT 6");
+        				WHERE f0.familyID = j.familyID and f0.genusID = g0.genusID and g0.speciesID=species.ID and g0.speciesID NOT IN (SELECT speciesID FROM visited where userID = $userID) ORDER BY j.c DESC LIMIT 6");
         		if($result === FALSE) {
     			die(mysqli_error($con)); 
 				}
