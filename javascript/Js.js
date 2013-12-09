@@ -135,6 +135,7 @@ function DeleteTag(ev,Id){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
       {
         location.reload();
+        // document.getElementById("TagCollection").innerHTML=xmlhttp.responseText;
       }
     }
   xmlhttp.open("GET","query/DeleteTag.php?Id="+Id+"&tag="+str,true);
