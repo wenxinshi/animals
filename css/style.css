@@ -142,26 +142,34 @@ body{
 	margin:7%;
 }
 
+
 #TagCollection{
-	width: 90%;
-	height: 200px;
-	border-radius: 10px;
-	border-style: solid;
-	border-color: #00ffff;
+	width: 95%;
+	min-height: 30px;
+	height:auto;
+	float:left;
+	margin-top:10px;
+    border-style:dotted;
+    border-color: #C0C0C0;
+}
+
+#DefaultTagCollection{
+	width:95%;
+    border-style:dotted;
+    border-color: #C0C0C0;
+	float:left;
+	margin-top:10px;
 }
 
 #Tag label{
+	border-radius: 10px;
+	border-style: solid;
+	border-width:1px;
     border-radius: 5px;
     margin-right:5px;
     margin-bottom: 10px;
-    width:auto;
-    height:auto;
+    float:left;
 }
-
-#TagCollection label{
-	float:left;
-}
-
 
 #TextArea{
 	width:90%;
@@ -278,7 +286,7 @@ position: relative;
 }
 
 .mainresult{
-	 margin:2px;
+	margin:2px;
   	border:1px solid #bebebe;
 	float: left;
 	width: 298px;
@@ -300,4 +308,36 @@ position: relative;
 	clear: left;
 	text-align:center;
 	overflow: hidden;
+}
+
+
+#AddTagButton{
+	width:100%;
+	padding:0;
+}
+
+#TagUserInput{
+	width:95%;
+	margin-top:10px;
+	padding:0;
+}
+
+#Trash{
+	width:55px;
+	height:75px;
+	float:left;
+	background:url(../images/Trash.png);
+}
+
+#UserWorkSpace{
+	width:90%;
+	float:left;
+	padding:10px;
+}
+
+#TagUser{
+	margin-top:10px;
+	width:60%;
+	float:right;
+
 }

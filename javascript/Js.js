@@ -2,33 +2,6 @@ function SignUp(){
 window.open("SignUp.html");
 }
 
-
-function TagEdit(Id){
-    document.getElementById("TextArea").readOnly=false;
-    document.getElementById("TagEditButton").style.display='none';
-    document.getElementById("TagEditingButton").innerHTML='<button id="TagCancelButton" type="button" onclick="TagCancel('+Id+')">Cancel</button><button id="TagSaveButton" type="button" onclick="TagSave('+Id+')">Save</button>';
-}
-
-function TagSave(Id){
-
-var xmlhttp=new XMLHttpRequest();
-var str=document.getElementById("TextArea").value; 
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("TextArea").value=xmlhttp.responseText;
-    document.getElementById("TagCancelButton").style.display='none';
-    document.getElementById("TagSaveButton").style.display='none';
-    document.getElementById("TextArea").readOnly=true;
-    document.getElementById("TagEditButton").style.display='inLine';
-    }
-    
-  }
-xmlhttp.open("GET","query/TagSave.php?Id="+Id+"&tag="+str,true);
-xmlhttp.send();
-}
-
 function TagCancel(Id){
 
 var xmlhttp=new XMLHttpRequest();
@@ -94,19 +67,76 @@ function reloadPage(){
 
 
 
-function allowDrop(ev)
+function AllowDrop(ev)
 {
 ev.preventDefault();
 }
 
-function drag(ev)
+function Drag(ev)
 {
-ev.dataTransfer.setData("Text",ev.target.id);
+ev.dataTransfer.setData("Text",ev.target.innerHTML);
 }
 
-function drop(ev)
+
+function DropIn(ev,Id)
 {
 ev.preventDefault();
-var data=ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
+var str=ev.dataTransfer.getData("Text");
+var labels=document.getElementById("TagCollection").getElementsByTagName("label");
+
+for (var i = labels.length - 1; i >= 0; i--) {
+  if(labels[i].innerHTML==str)
+    return;
+};
+
+var xmlhttp=new XMLHttpRequest();  
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+      location.reload();
+    }
+  }
+xmlhttp.open("GET","query/AddTag.php?Id="+Id+"&tag="+str,true);
+xmlhttp.send();
+}
+
+function AddTag(Id){
+  var xmlhttp=new XMLHttpRequest();
+  var str=document.getElementById("TagUserInput").value;
+  var letters=/^[0-9a-zA-Z]+/;  
+  if(!str.match(letters)){
+    return ;
+  }
+
+var labels=document.getElementById("TagCollection").getElementsByTagName("label");
+
+for (var i = labels.length - 1; i >= 0; i--) {
+  if(labels[i].innerHTML==str)
+    return;
+};  
+
+  xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+        location.reload();
+      }
+    }
+  xmlhttp.open("GET","query/AddTag.php?Id="+Id+"&tag="+str,true);
+  xmlhttp.send();
+}
+
+function DeleteTag(ev,Id){
+  ev.preventDefault();
+  var str=ev.dataTransfer.getData("Text");
+  
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+        location.reload();
+      }
+    }
+  xmlhttp.open("GET","query/DeleteTag.php?Id="+Id+"&tag="+str,true);
+  xmlhttp.send();
 }
