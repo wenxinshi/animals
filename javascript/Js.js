@@ -80,8 +80,6 @@ xmlhttp.onreadystatechange=function()
     {
     document.getElementById("Login").innerHTML=xmlhttp.responseText;
     self.location="index.php";
-
-
     }
     
   }
