@@ -20,6 +20,14 @@ body{
 	display: block;
 
 }
+
+#Logo h1{
+	color:#20b2aa;
+}
+
+#Login h2{
+	color:#00ced1;
+}
 #TopMenu ul{
 	width:300px;
 	margin: 0px;
@@ -31,9 +39,15 @@ body{
 	list-style-type:none;	
 	width: auto;
 	float: left;
-	display:block
-	
+	display:block	
 }
+
+#TopMenu span{
+	font-size: 20px;
+	margin-left:170px;
+}
+
+
 #TopMenu .blank{
 	width: 1px;
 	height: 18px;
